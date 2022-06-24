@@ -40,3 +40,7 @@ Cookiecutter template for a Python package
 
 ## github-actions
 - [tox](https://pypi.org/project/tox-gh-actions/)
+
+## Resources
+- [pep8](https://peps.python.org/pep-0008/)
+- [click](https://click.palletsprojects.com/en/8.1.x/)
