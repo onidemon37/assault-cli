@@ -13,7 +13,7 @@ from setuptools import find_packages, setup, Command
 
 # Package meta-data.
 NAME = "assault-cli"
-DESCRIPTION = "assault ."
+DESCRIPTION = "assault tool"
 URL = "https://github.com/onidemon37/assault-cli"
 EMAIL = "onidemon37@protonmail.com"
 AUTHOR = "onidemon37"
@@ -21,7 +21,7 @@ REQUIRES_PYTHON = ">=3.8.0"
 VERSION = "0.1.0"
 
 # What packages are required for this module to be executed?
-REQUIRED = ["click"]
+REQUIRED = ["click", "requests"]
 
 # What packages are optional?
 EXTRAS = {
