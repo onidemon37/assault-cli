@@ -33,12 +33,23 @@ Pull requests are encouraged!
 ## github-actions
 - [tox](https://pypi.org/project/tox-gh-actions/)
 
+## doctests
+Usage
+```
+python -m doctest -v assault/stats.py
+```
+
+- https://docs.python.org/3/library/doctest.html
+
 ## Resources
 - [pep8](https://peps.python.org/pep-0008/)
 - [click](https://click.palletsprojects.com/en/8.1.x/)
 - [asyncio - Asynchronous I/O](https://docs.python.org/3/library/asyncio.html)
 - [pre-commit](https://pre-commit.com/)
 - [setup.py](https://docs.python.org/3/distutils/setupscript.html)
+- [doctest](https://docs.python.org/3/library/doctest.html)
+- [typing](https://docs.python.org/3/library/typing.html)
+- [queue](https://docs.python.org/3/library/asyncio-queue.html)
 
 ### More Resources
 What is setup.py? on Stack Overflow
