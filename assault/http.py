@@ -1,31 +1,41 @@
 import asyncio
-from asyncio import tasks
-import queue
+import os
+import requests
+import time
+
+# Make the HTTP request and return the results
+def fetch(url):
+    started_at = time.monotonic()
+    response = requests.get(url)
+    request_time = time.monotonic() - started_at
+    return {"status_code": response.status_code, "request_time": request_time}
 
 
-def fetch():
-    """Make the request and return the results"""
-    pass
+# Function to continue to process work from queue
+async def worker(name, queue, results):
+    """ A function to make requests from a queue and perform the work then add results to the results list. """
+    loop = asyncio.get_event_loop()
+    while True:
+        url = await queue.get()
+        if os.getenv("DEBUG"):
+            print(f"{name} - Fetch {url}")
+        future_result = loop.run_in_executor(None, fetch, url)
+        result = await future_result
+        results.append(result)
+        queue.task_done()
+        
 
-
-def worker():
-    """A function to take unmake requests from a
-    queu and perform the work then add results
-    to the results list.
-    """
-    pass
-
-
-async def distribute_work(url, requests, concurrency, results):
-    """Divide up the work into batches and collect the final results"""
+# Divide up the work into batches and collect the final results
+async def distribute_work( url, requests, concurrency, results):
     queue = asyncio.Queue()
 
+    # Add an item to the queue for each request we want to make
     for _ in range(requests):
         queue.put_nowait(url)
 
     tasks = []
     for i in range(concurrency):
-        tasks = asyncio.create_task(worker(f"worker-{i+1}", queue, results))
+        task = asyncio.create_task(worker(f"worker-{i+1}", queue, results))
         tasks.append(task)
 
     started_at = time.monotonic()
@@ -40,9 +50,8 @@ async def distribute_work(url, requests, concurrency, results):
         f"{concurrency} workers took {total_time:.2f} seconds to complete {len(results)} requests"
     )
 
-
+# Entrypoint to making requests
 def assault(url, requests, concurrency):
-    """Entrypoint to making"""
     results = []
     asyncio.run(distribute_work(url, requests, concurrency, results))
     print(results)

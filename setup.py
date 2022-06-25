@@ -13,7 +13,7 @@ from setuptools import find_packages, setup, Command
 
 # Package meta-data.
 NAME = "assault-cli"
-DESCRIPTION = "assault ."
+DESCRIPTION = "assault tool"
 URL = "https://github.com/onidemon37/assault-cli"
 EMAIL = "onidemon37@protonmail.com"
 AUTHOR = "onidemon37"
