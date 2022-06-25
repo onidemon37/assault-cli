@@ -13,7 +13,7 @@ In short, setup.py files can be daunting to approach, when first starting out â€
 Check out the example!
 
 * Installation
-cd assault-cli
+cd assault-cli/
 
 ```
 ## Download the setup.py file:
