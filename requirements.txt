@@ -1,4 +1,4 @@
--e git+ssh://git@github.com/onidemon37/assault-cli.git@da53963a8aed566bf8ca450e954c5364a97dee7b#egg=assault_cli
+-e git+ssh://git@github.com/onidemon37/assault-cli.git@3dd9621fd024c4831c7f31c8aee423843472f994#egg=assault_cli
 bleach==5.0.0
 certifi==2022.6.15
 cffi==1.15.0
@@ -31,6 +31,7 @@ SecretStorage==3.3.2
 six==1.16.0
 toml==0.10.2
 twine==4.0.1
+typing==3.7.4.3
 urllib3==1.26.9
 virtualenv==20.14.1
 webencodings==0.5.1
