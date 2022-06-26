@@ -30,10 +30,25 @@ curl -O https://raw.githubusercontent.com/navdeep-G/setup.py/master/setup.py
 Tests via `$ setup.py` test (if it's concise).
 Pull requests are encouraged!
 
-## github-actions
+* github-actions
 - [tox](https://pypi.org/project/tox-gh-actions/)
 
-## doctests
+* assault
+** Usage
+```
+assault https://example.com
+... Done!
+--- Results ---
+Successful requests   500
+Slowest               0.010s
+Fastest               0.001s
+Average               0.003s
+Total Time            0.620s
+Requests Per Minute   4836
+Requests Per Second   80
+```
+
+* doctests
 Usage
 ```
 python -m doctest -v assault/stats.py
@@ -41,7 +56,7 @@ python -m doctest -v assault/stats.py
 
 - https://docs.python.org/3/library/doctest.html
 
-## Resources
+* Resources
 - [pep8](https://peps.python.org/pep-0008/)
 - [click](https://click.palletsprojects.com/en/8.1.x/)
 - [asyncio - Asynchronous I/O](https://docs.python.org/3/library/asyncio.html)
@@ -51,7 +66,7 @@ python -m doctest -v assault/stats.py
 - [typing](https://docs.python.org/3/library/typing.html)
 - [queue](https://docs.python.org/3/library/asyncio-queue.html)
 
-### More Resources
+** More Resources
 What is setup.py? on Stack Overflow
 Official Python Packaging User Guide
 The Hitchhiker's Guide to Packaging
