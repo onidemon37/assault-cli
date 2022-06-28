@@ -1,6 +1,7 @@
 # assault-cli
 Tutorial into buildind a cli tool, using click and python
 
+- [Programming Use Cases with Python](https://learn.acloud.guru/course/eacc77f8-54c2-427f-8c5c-e32e98123f5c/dashboard)
 ## requirements
 
 ## setup.py (for humans)
