@@ -13,7 +13,7 @@ def fetch(url):
 
 # Function to continue to process work from queue
 async def worker(name, queue, results):
-    """ A function to make requests from a queue and perform the work then add results to the results list. """
+    """A function to make requests from a queue and perform the work then add results to the results list."""
     loop = asyncio.get_event_loop()
     while True:
         url = await queue.get()
@@ -23,10 +23,10 @@ async def worker(name, queue, results):
         result = await future_result
         results.append(result)
         queue.task_done()
-        
+
 
 # Divide up the work into batches and collect the final results
-async def distribute_work( url, requests, concurrency, results):
+async def distribute_work(url, requests, concurrency, results):
     queue = asyncio.Queue()
 
     # Add an item to the queue for each request we want to make
